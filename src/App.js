@@ -11,16 +11,17 @@ import ProtectedRoute from './routing/ProtectedRoute';
 
 function App() {
   return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+        <Route element={<ProtectedRoute />}>
 
-    <Routes>
-      <Route path="/" element={<SplashScreen />} />
-      <Route element={<ProtectedRoute />}>
+          <Route path="/home" element={<Home />} />
 
-        <Route path="/home" element={<Home />} />
-
-      </Route>
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -3,9 +3,9 @@ import './Splash.css';
 
 const SplashScreen = () => (
   <section className="splash-screen">
-    <div className="spash-logo"><h1>ZAWADI</h1></div>
+    <div className="spash-logo"><h1>smart tutor app</h1></div>
     <div className="welcome-text">
-      <h2>Your Loan Accounting Software</h2>
+      <h2>Your modern learning software</h2>
     </div>
     <div className="register-btns">
       <Link to="/Login" className="btn login-btn">
