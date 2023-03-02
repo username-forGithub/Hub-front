@@ -32,10 +32,10 @@ const Home = () => {
 
   return (
     <div className="main-tutor-container">
-      <div className="header">
+      {/* <div className="header">
         <h1 className="header-1">AVAILABLE Tutors</h1>
         <h2 className="header-2 mt-5">No tutors available</h2>
-      </div>
+      </div> */}
 
       <>
         <div className="header">
