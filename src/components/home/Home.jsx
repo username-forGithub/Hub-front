@@ -51,6 +51,8 @@ const Home = () => {
             <div>
               <Link to="/tutor_details/">
                 <SingleTutor />
+                <SingleTutor />
+                <SingleTutor />
               </Link>
             </div>
           </Carousel>
