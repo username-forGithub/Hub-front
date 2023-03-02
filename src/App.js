@@ -11,6 +11,9 @@ import Home from './components/Home/Home';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import ProtectedRoute from './routing/ProtectedRoute';
+import Navbar from './components/Navbar/Navbar';
+import BarLayout from './components/Layout';
+import TutorDetails from './components/Home/TutorDetails';
 
 function App() {
   return (
@@ -19,11 +22,11 @@ function App() {
         <Route path="/" element={<SplashScreen />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<SplashScreen />} />
-        <Route element={<ProtectedRoute />}>
+        <Route element={<BarLayout />}>
 
+          <Route path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Home />} />
-
+          <Route path="/tutor_details" element={<TutorDetails />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
