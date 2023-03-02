@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 import {
   BrowserRouter as Router,
