@@ -1,0 +1,93 @@
+/* stylelint-disable function-linear-gradient-no-nonstandard-direction */
+/* stylelint-disable csstree/validator */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #00b09b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  line-height: 100px;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  z-index: 100;
+  overflow-x: hidden;
+  position: sticky;
+}
+
+.spash-logo {
+  margin: 0 auto;
+  z-index: 100;
+  color: white;
+  font-weight: bolder !important;
+  backdrop-filter: blur(5px);
+  font-size: 5rem !important;
+}
+
+.register-btns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.register-btns .btn {
+  border-radius: 20px;
+  height: 100%;
+  padding: 10px;
+  background-color: #fff;
+  width: 200px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  z-index: 100;
+}
+
+.register-btns .btn:hover {
+  color: rgb(5, 112, 5);
+  background-color: rgb(248, 243, 243);
+  font-weight: bold;
+}
+
+/* welcome text */
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 4% auto !important;
+  z-index: 100;
+  color: #fff;
+  width: auto;
+  backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 600px) {
+  .register-btns {
+    flex-flow: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .register-btns .btn {
+    margin: 50px auto;
+    width: 100px;
+    height: auto;
+  }
+
+  .welcome-text {
+    font-size: 1.5rem;
+    margin: 2% auto;
+    z-index: 100;
+    color: #fff;
+    width: 90%;
+  }
+}
