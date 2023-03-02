@@ -136,11 +136,10 @@
 @media only screen and (max-width: 820px) {
   .header {
     position: relative;
-    width: 10px;
     margin-top: 30px;
   }
 
-  .tutor-li {
+  .tutors-li {
     position: relative;
     left: -100px;
   }
@@ -163,4 +162,11 @@
     font-size: 18px;
     display: inline-block;
   }
+}
+
+.react-multi-carousel-list {
+  display: block;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
