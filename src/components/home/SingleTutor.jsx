@@ -12,14 +12,14 @@ const social = [
 ];
 
 const SingleTutor = () => (
-  <div className="doctors1">
+  <div className="tutors1">
     <div className="image-div">
-      <img src={teacher1} alt="Profile of doctor" className="doctors-images" />
+      <img src={teacher1} alt="Profile of tutor" className="tutors-images" />
     </div>
-    <div className="tutors-data text-white fw-bold">
+    <div className="tutors-data fw-bold">
       <h4>name</h4>
       <p>.........................</p>
-      <p className="text-white fw-bolder">speciality</p>
+      <p className="fw-bolder">speciality</p>
       <div className="social-net">
         {social.map((item) => (
           <a href="/" key={item.icon}>
