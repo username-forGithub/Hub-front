@@ -20,26 +20,22 @@ export const getSTutorDetails = createAsyncThunk('GET_TUTOR_DETAILS', async () =
 });
 
 export const addTutor = createAsyncThunk('ADD_TUTOR', async (tutorDetails) => {
-  const response = axios.post('/api/v2/tutor', tutorDetails);
+  const response = axios.post('/api/v2/tutors', tutorDetails);
   return response.data;
 });
 
 export const removeTutor = createAsyncThunk('REMOVE_TUTOR', async (id) => {
-  const response = axios.delete(`/api/v2/tutor/${id}`);
+  const response = axios.delete(`/api/v2/tutors/${id}`);
   return response.data;
 });
 
 const tutorReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_ALL_TUTOR: return [
-      ...state, ...action.payload,
-    ];
+    case GET_ALL_TUTOR: return [...state, ...action.payload];
     case GET_TUTOR_DETAILS: return { ...state, ...action.payload };
     case ADD_TUTOR_DETAILS: return { ...state, ...action.payload };
     case REMOVE_TUTOR_DETAILS: return state.fileter((tutor) => tutor.id !== action.payload);
-    default: {
-      return state;
-    }
+    default: return state;
   }
 };
 
