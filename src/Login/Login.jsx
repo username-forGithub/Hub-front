@@ -9,7 +9,6 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
 
   const submitForm = () => {
-    console.log('login success');
   };
 
   return (
