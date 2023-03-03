@@ -5,11 +5,7 @@ import fb from '../../images2/fb-icon-home.png';
 import twitter from '../../images2/twitter-icon-home.png';
 import teacher1 from '../../images2/images/teacher1.jpg';
 
-const social = [
-  { icon: insta },
-  { icon: fb },
-  { icon: twitter },
-];
+const social = [{ icon: insta }, { icon: fb }, { icon: twitter }];
 
 const SingleTutor = () => (
   <div className="tutors1">

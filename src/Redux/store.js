@@ -1,13 +1,14 @@
-import { combineReducers, combineStore } from '@reduxjs/toolkit';
-
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import thunk from 'redux-thunk';
 import tutorReducer from './tutor/tutorReducer';
 
-const rootReducer = combineReducers(
-  {
-    tutors: tutorReducer,
+const rootReducer = {
+  reducer: {
+    tutorReducer,
   },
-);
+};
 
-const store = combineStore(rootReducer);
+const store = configureStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

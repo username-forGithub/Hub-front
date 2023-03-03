@@ -6,9 +6,7 @@ import logo from '../../images2/logo.png';
 const Navbar = () => (
   <nav className="navbar">
     <div className="logo-container">
-      <Link
-        to="/home"
-      >
+      <Link to="/home">
         <img src={logo} className="logo" alt="logo" />
       </Link>
     </div>
@@ -54,7 +52,9 @@ const Navbar = () => (
             Delete Tutor
           </NavLink>
         </li>
-        <button type="button" className="btn btn-danger btn-sm">Logout</button>
+        <button type="button" className="btn btn-danger btn-sm">
+          Logout
+        </button>
       </ul>
     </div>
     <br />

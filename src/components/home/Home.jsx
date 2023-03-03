@@ -6,7 +6,6 @@ import 'react-multi-carousel/lib/styles.css';
 import SingleTutor from './SingleTutor';
 
 const Home = () => (
-
   <div className="main-tutor-container">
     <div className="header">
       <h1 className="header-1">AVAILABLE Tutors</h1>
@@ -20,7 +19,6 @@ const Home = () => (
       </Link>
     </div>
   </div>
-
 );
 
 export default Home;

@@ -20,7 +20,12 @@ const TutorDetails = () => (
           <td>fee</td>
         </tr>
       </table>
-      <Link to="/new_appointment" className="btn btn-secondary mt-4 text-center">Book Appointment</Link>
+      <Link
+        to="/new_appointment"
+        className="btn btn-secondary mt-4 text-center"
+      >
+        Book Appointment
+      </Link>
     </div>
   </div>
 );
