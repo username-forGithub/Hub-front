@@ -1,4 +1,4 @@
-import { combineReducers, combineStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import tutorReducer from './tutor/tutorReducer';
 
@@ -8,6 +8,6 @@ const rootReducer = combineReducers(
   },
 );
 
-const store = combineStore(rootReducer);
+const store = configureStore(rootReducer);
 
 export default store;
