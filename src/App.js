@@ -7,7 +7,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 import SplashScreen from './components/Splash/Splash';
-import Home from './components/Home/Home';
+import Home from './components/Home/Home.jsx';
 import Login from './Login/Login';
 import Register from './Register/Register';
 import ProtectedRoute from './routing/ProtectedRoute';
