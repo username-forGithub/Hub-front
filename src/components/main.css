@@ -32,6 +32,7 @@ body {
   display: block;
   top: 0;
   left: 0;
+  background-image: linear-gradient(to right top, #f2f4f8, #b4d7e5, #73bdb6, #609e6d, #72761c);
 }
 
 .logo {

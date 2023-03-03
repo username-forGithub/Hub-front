@@ -8,16 +8,29 @@ import SingleTutor from './SingleTutor';
 const Home = () => (
 
   <div className="main-tutor-container">
-    <div className="header">
+    <div className="header custom-header text-center fw-bold">
       <h1 className="header-1">AVAILABLE Tutors</h1>
       <p className="header-2"> Please select a tutor</p>
     </div>
     <div>
-      <Link to="/tutor_details/">
-        <SingleTutor />
-        <SingleTutor />
-        <SingleTutor />
-      </Link>
+      <div className="row">
+        <div className="col-md">
+          <Link to="/tutor_details/">
+            <SingleTutor />
+          </Link>
+        </div>
+        <div className="col-md">
+          <Link to="/tutor_details/">
+            <SingleTutor />
+          </Link>
+        </div>
+        <div className="col-md">
+          <Link to="/tutor_details/">
+            <SingleTutor />
+          </Link>
+        </div>
+      </div>
+
     </div>
   </div>
 
