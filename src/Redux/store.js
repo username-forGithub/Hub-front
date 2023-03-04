@@ -1,7 +1,6 @@
-import { applyMiddleware, combineReducers, combineStore } from '@reduxjs/toolkit';
-
-import tutorReducer from './tutor/tutorReducer';
 import thunk from 'redux-thunk';
+import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit';
+import tutorReducer from './tutor/tutorReducer';
 
 const rootReducer = combineReducers(
   {
@@ -9,6 +8,6 @@ const rootReducer = combineReducers(
   },
 );
 
-const store = combineStore(rootReducer, applyMiddleware(thunk));
+const store = configureStore(rootReducer, applyMiddleware(thunk));
 
 export default store;

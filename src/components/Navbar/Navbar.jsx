@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../main.css';
@@ -7,7 +8,7 @@ const Navbar = () => (
   <nav className="navbar">
     <div className="logo-container">
       <Link
-        to="/"
+        to="/home"
       >
         <img src={logo} className="logo" alt="logo" />
       </Link>

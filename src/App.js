@@ -14,6 +14,9 @@ import ProtectedRoute from './routing/ProtectedRoute';
 import Navbar from './components/Navbar/Navbar';
 import BarLayout from './components/Layout';
 import TutorDetails from './components/Home/TutorDetails';
+import AddTutor from './components/Home/AddTutor';
+import BookAppointment from './components/Appointments/BookAppointment';
+import MyAppointments from './components/Appointments/MyAppointments';
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
           <Route path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Home />} />
           <Route path="/tutor_details" element={<TutorDetails />} />
+          <Route path="/add_tutor" element={<AddTutor />} />
+          <Route path="/new_appointment" element={<BookAppointment />} />
+          <Route exact path="/my_appointments" element={<MyAppointments />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
