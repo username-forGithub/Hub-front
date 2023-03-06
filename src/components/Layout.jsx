@@ -5,9 +5,11 @@ import Topbar from './Navbar/Topbar';
 const BarLayout = () => (
   <>
     <Topbar />
-    <div className="containe custom">
+    <div className="container custom">
       <Navbar />
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
     </div>
   </>
 );
