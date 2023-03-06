@@ -23,7 +23,7 @@ const Home = () => {
       </div>
       <div>
         {tutors.map((tutor) => (
-          <Link key={tutor.name} to="/tutor_details">
+          <Link key={tutor.name} to={`/tutor_details/${tutor.id}`}>
             <SingleTutor data={tutor} />
           </Link>
         ))}

@@ -30,7 +30,7 @@ function App() {
             <Route element={<BarLayout />}>
               <Route path="/" element={<SplashScreen />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/tutor_details" element={<TutorDetails />} />
+              <Route path="/tutor_details/:id" element={<TutorDetails />} />
               <Route path="/add_tutor" element={<AddTutor />} />
             </Route>
             <Route path="*" element={<Navigate to="/" replace />} />

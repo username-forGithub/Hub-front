@@ -1,3 +1,4 @@
+/* eslint-disable no-confusing-arrow */
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
@@ -38,8 +39,13 @@ const tutorReducer = (state = initialState, action) => {
     case GET_ALL_TUTOR:
       return [...action.payload];
     case GET_TUTOR_DETAILS:
-      return state.map((tutor) =>
-        tutor.id === action.payload.id ? action.payload : tutor,
+      return state.map(
+        (tutor) =>
+          // eslint-disable-next-line implicit-arrow-linebreak
+          tutor.id === action.payload.id
+            ? { ...tutor, ...action.payload }
+            : tutor,
+        // eslint-disable-next-line function-paren-newline
       );
     case ADD_TUTOR_DETAILS:
       return { ...state, ...action.payload };
