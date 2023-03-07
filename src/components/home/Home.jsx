@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './tutors.css';
 import { Link } from 'react-router-dom';
 import 'react-multi-carousel/lib/styles.css';
-import SingleTutor from './SingleTutor';
+import SingleTutor from './SingleTutor.jsx';
 import { getAllTutor } from '../../Redux/tutor/tutorReducer';
 
 const Home = () => {
