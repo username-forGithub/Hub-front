@@ -25,7 +25,8 @@ export const getSTutorDetails = createAsyncThunk(
 );
 
 export const addTutor = createAsyncThunk('ADD_TUTOR', async (tutorDetails) => {
-  const response = axios.post('/api/v2/tutors', tutorDetails);
+  // const response = await axios.post('/tutors', tutorDetails);
+  const response = await axios.post('/tutors', tutorDetails);
   return response.data;
 });
 
@@ -48,7 +49,7 @@ const tutorReducer = (state = initialState, action) => {
         // eslint-disable-next-line function-paren-newline
       );
     case ADD_TUTOR_DETAILS:
-      return { ...state, ...action.payload };
+      return { ...action.payload };
     case REMOVE_TUTOR_DETAILS:
       return state.filter((tutor) => tutor.id !== action.payload);
     default:
