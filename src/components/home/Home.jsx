@@ -10,8 +10,9 @@ import { getAllTutor } from '../../Redux/tutor/tutorReducer';
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const tutors = useSelector((state) => state.tutorReducer);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+  console.log(user);
   useEffect(() => {
     dispatch(getAllTutor())
       .then(() => setLoading(false))

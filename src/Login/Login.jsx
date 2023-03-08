@@ -11,8 +11,10 @@ import './login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const formRef = useRef();
   const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
@@ -20,17 +22,17 @@ const Login = () => {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const userInfo = {
-      email: data.email,
-      password: data.password,
+      user: { email: data.email, password: data.password },
     };
     dispatch(userLogin(userInfo));
+    console.log(userInfo);
     event.target.reset();
     navigate('/home');
   };
 
   return (
     <div className="my-form">
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleSubmit(e)} ref={formRef}>
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <br />
@@ -39,6 +41,7 @@ const Login = () => {
             className="form-input form-control"
             placeholder="Enter your email address"
             value={email}
+            name="email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -51,6 +54,7 @@ const Login = () => {
             className="form-input form-control"
             placeholder="Enter your password"
             value={password}
+            name="password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />

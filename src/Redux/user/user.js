@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const SIGNUP_URL = 'http://localhost:3000/signup';
 const LOGIN_URL = 'http://localhost:3000/login';
@@ -30,7 +31,12 @@ export const userSignUp = createAsyncThunk(USER_SIGNED, async (userInfo) => {
 
 // User Login thunk
 export const userLogin = createAsyncThunk(USER_LOGGED, async (userInfo) => {
-  const data = await userAuth(LOGIN_URL, userInfo);
+  const response = await axios.get('/csrf_token');
+  const data = await userAuth(LOGIN_URL, userInfo, {
+    headers: {
+      'X-CSRF-Token': response.data.csrf_token,
+    },
+  });
   return data;
 });
 
