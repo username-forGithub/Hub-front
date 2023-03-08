@@ -24,13 +24,9 @@ const Login = () => {
       password: data.password,
     };
     dispatch(userLogin(userInfo));
-    email.value = '';
-    password.value = '';
+    event.target.reset();
     navigate('/home');
   };
-  // const { register, handleSubmit } = useForm();
-
-  // const submitForm = () => {};
 
   return (
     <div className="my-form">
