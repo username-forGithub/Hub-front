@@ -19,14 +19,19 @@ const RegisterScreen = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
+
     const userInfo = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-      confirmPassword: data.confirmPassword,
+      user: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        password_confirmation: data.confirmPassword,
+      },
     };
+    console.log(userInfo);
     dispatch(userSignUp(userInfo));
     event.target.reset();
     navigate('/login');
@@ -34,7 +39,7 @@ const RegisterScreen = () => {
 
   return (
     <div className="my-form">
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleSubmit(e)} ref={formRef}>
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
           <br />
@@ -43,6 +48,7 @@ const RegisterScreen = () => {
             className="form-input form-control"
             placeholder="Enter your name"
             value={name}
+            name="name"
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -55,6 +61,7 @@ const RegisterScreen = () => {
             className="form-input form-control"
             placeholder="Enter your email address"
             value={email}
+            name="email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -67,6 +74,7 @@ const RegisterScreen = () => {
             className="form-input form-control"
             placeholder="Enter your email address"
             value={password}
+            name="password"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -79,14 +87,17 @@ const RegisterScreen = () => {
             className="form-input form-control"
             placeholder="Enter your email address"
             value={confirmPassword}
+            name="confirmPassword"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>
         <br />
-        <button type="submit" className="btn btn-success btn-block">
-          Register
-        </button>
+        <input
+          type="submit"
+          value="Register"
+          className="button1 btn btn-secondary"
+        />
       </form>
     </div>
   );

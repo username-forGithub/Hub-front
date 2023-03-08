@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const SIGNUP_URL = 'http://localhost:300/signup';
-const LOGIN_URL = 'http://localhost:300/login';
-const LOGOUT_URL = 'http://localhost:300/logout';
+const SIGNUP_URL = 'http://localhost:3000/signup';
+const LOGIN_URL = 'http://localhost:3000/login';
+const LOGOUT_URL = 'http://localhost:3000/logout';
 const USER_SIGNED = 'user_signup';
 const USER_LOGGED = 'user_login';
 const USER_LOGGEDOUT = 'user_loggedout';
