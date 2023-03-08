@@ -1,15 +1,21 @@
 /* eslint-disable no-undef */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addTutor } from '../../Redux/tutor/tutorReducer';
 
 import './add_tutor.css';
 
 const AddTutor = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState('');
   const [speciality, setSpeciality] = useState('');
   const [fee, setFee] = useState('');
-
   const [image, setImage] = useState('');
+  const [city, setCity] = useState('');
+
+  const formRef = useRef();
 
   const tutorsName = document.getElementById('name');
   const tutorsSpeciality = document.getElementById('speciality');
@@ -21,27 +27,34 @@ const AddTutor = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const tutors = new FormData();
-    tutors.append('tutor[name]', name);
-    tutors.append('tutor[image]', image);
-    tutors.append('tutor[speciality]', speciality);
-    tutors.append('tutor[fee]', fee);
+    const formData = new FormData(formRef.current);
+    const data = Object.fromEntries(formData);
+    const tutorInfo = {
+      name: data.name,
+      image: data.image,
+      price: +data.fee,
+      description: data.speciality,
+      city: data.city,
+      user_id: 2,
+    };
 
-    const { id } = user;
-
-    dispatch(createDoctorAction(tutors, id));
+    dispatch(addTutor(tutorInfo));
     tutorsName.value = '';
     tutorsSpeciality.value = '';
     tutorsFee.value = '';
     tutorsImage.value = '';
-    navigate('/tutors');
+    navigate('/home');
   };
 
   return (
     <section className="tutor-section">
       <div className="tutor-container">
         <h3 className="tutor-title">Add A Tutor</h3>
-        <form onSubmit={handleSubmit} className="tutor-form">
+        <form
+          ref={formRef}
+          onSubmit={(e) => handleSubmit(e)}
+          className="tutor-form"
+        >
           <input
             type="text"
             className="form-control"
@@ -63,13 +76,14 @@ const AddTutor = () => {
             required
           />
           <input
-            type="file"
+            type="text"
             name="image"
+            value={image}
             id="image"
             className="form-control"
             placeholder="Enter an image url link"
             required
-            onChange={(e) => setImage(e.target.files[0])}
+            onChange={(e) => setImage(e.target.value)}
           />
           <input
             type="number"
@@ -80,6 +94,16 @@ const AddTutor = () => {
             placeholder="Enter your fee"
             required
             onChange={(e) => setFee(e.target.value)}
+          />
+          <input
+            type="text"
+            name="city"
+            id="fee"
+            value={city}
+            className="form-control"
+            placeholder="Enter your city"
+            required
+            onChange={(e) => setCity(e.target.value)}
           />
           <input
             type="submit"
