@@ -7,9 +7,7 @@ import './register.css';
 const RegisterScreen = () => {
   const { register, handleSubmit } = useForm();
 
-  const submitForm = () => {
-
-  };
+  const submitForm = () => {};
 
   return (
     <div className="my-form">

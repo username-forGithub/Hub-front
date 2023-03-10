@@ -8,8 +8,7 @@ import './login.css';
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
-  const submitForm = () => {
-  };
+  const submitForm = () => {};
 
   return (
     <div className="my-form">
