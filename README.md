@@ -143,7 +143,7 @@ rake rswag
 ## 👥 Authors <a name="authors"></a>
 👤 **Brian Nyachae**
 
-- GitHub: [braincee](https://github.com/Bria22)
+- GitHub: [Brian](https://github.com/Bria22)
 - Twitter: [Bria22](https://twitter.com/Bria22)
 - LinkedIn: [Brian Nyachae](https://www.linkedin.com/in/brian-nyachae/)
 
