@@ -153,7 +153,7 @@ rake rswag
 
 👤 **Josh Batey**
 
-- GitHub: [@zemola](https://github.com/Bateyjosue)
+- GitHub: [@Bateyjosue](https://github.com/Bateyjosue)
 - Twitter: [@Bateyjosue](https://twitter.com/Bateyjosue)
 - LinkedIn: [Josh](https://www.linkedin.com/in/josue-ishara/)
 
