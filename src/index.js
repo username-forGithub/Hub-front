@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable linebreak-style */
 /* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
