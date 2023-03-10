@@ -1,5 +1,5 @@
-import thunk from 'redux-thunk';
 import { applyMiddleware, combineReducers, configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 import tutorReducer from './tutor/tutorReducer';
 
 const rootReducer = combineReducers(
