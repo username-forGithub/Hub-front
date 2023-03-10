@@ -141,10 +141,11 @@ rake rswag
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-👤 **Brian Tom**
-- GitHub: [Bree]()
-- Twitter: [Bree]()
-- LinkedIn: [Bree]()
+👤 **Brian Nyachae**
+
+- GitHub: [braincee](https://github.com/Bria22)
+- Twitter: [Bria22](https://twitter.com/Bria22)
+- LinkedIn: [Brian Nyachae](https://www.linkedin.com/in/brian-nyachae/)
 
 👤 **Kene Agagwu**
 
