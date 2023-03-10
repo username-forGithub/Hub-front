@@ -1,24 +1,55 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useForm } from 'react-hook-form';
+import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userSignUp } from '../Redux/user/user';
 import './register.css';
 
 const RegisterScreen = () => {
-  const { register, handleSubmit } = useForm();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const submitForm = () => {};
+  const formRef = useRef();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(formRef.current);
+    const data = Object.fromEntries(formData);
+
+    const userInfo = {
+      user: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        password_confirmation: data.confirmPassword,
+      },
+    };
+    console.log(userInfo);
+    dispatch(userSignUp(userInfo));
+    event.target.reset();
+    navigate('/login');
+  };
 
   return (
     <div className="my-form">
-      <form onSubmit={handleSubmit(submitForm)}>
+      <form onSubmit={(e) => handleSubmit(e)} ref={formRef}>
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
           <br />
           <input
             type="text"
             className="form-input form-control"
-            {...register('firstName')}
+            placeholder="Enter your name"
+            value={name}
+            name="name"
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
@@ -28,7 +59,10 @@ const RegisterScreen = () => {
           <input
             type="email"
             className="form-input form-control"
-            {...register('email')}
+            placeholder="Enter your email address"
+            value={email}
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -38,7 +72,10 @@ const RegisterScreen = () => {
           <input
             type="password"
             className="form-input form-control"
-            {...register('password')}
+            placeholder="Enter your email address"
+            value={password}
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
@@ -48,14 +85,19 @@ const RegisterScreen = () => {
           <input
             type="password"
             className="form-input form-control"
-            {...register('confirmPassword')}
+            placeholder="Enter your email address"
+            value={confirmPassword}
+            name="confirmPassword"
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>
         <br />
-        <button type="submit" className="btn btn-success btn-block">
-          Register
-        </button>
+        <input
+          type="submit"
+          value="Register"
+          className="button1 btn btn-secondary"
+        />
       </form>
     </div>
   );
