@@ -148,8 +148,8 @@ rake rswag
 
 👤 **Kene Agagwu**
 
-- GitHub: [kenny]()
-- LinkedIn: [kenny]()
+- GitHub: [@kene-creator](https://github.com/kene-creator)
+- LinkedIn: [kene Agagwu](https://www.linkedin.com/in/kene-agagwu)
 
 👤 **Josh Batey**
 
