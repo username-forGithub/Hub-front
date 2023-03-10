@@ -2,19 +2,18 @@
 /* eslint-disable import/extensions */
 /* eslint-disable linebreak-style */
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
+
 import { BrowserRouter } from 'react-router-dom';
 import SplashScreen from '../components/Splash/Splash';
-import store from '../redux/configureStore';
 
 describe('Splash screen tests', () => {
   it('renders correctly', () => {
     const tree = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <SplashScreen />
-        </BrowserRouter>
-      </Provider>,
+
+      <BrowserRouter>
+        <SplashScreen />
+      </BrowserRouter>
+      ,
     );
     expect(tree).toMatchSnapshot();
   });
@@ -22,11 +21,11 @@ describe('Splash screen tests', () => {
   it('Splash page has a sign up link', () => {
     const register = render(
       <>
-        <Provider store={store}>
-          <BrowserRouter>
-            <SplashScreen />
-          </BrowserRouter>
-        </Provider>
+
+        <BrowserRouter>
+          <SplashScreen />
+        </BrowserRouter>
+
       </>,
     );
 
@@ -36,11 +35,11 @@ describe('Splash screen tests', () => {
   it('Splash page has a log in link', () => {
     const register = render(
       <>
-        <Provider store={store}>
-          <BrowserRouter>
-            <SplashScreen />
-          </BrowserRouter>
-        </Provider>
+
+        <BrowserRouter>
+          <SplashScreen />
+        </BrowserRouter>
+
       </>,
     );
 
