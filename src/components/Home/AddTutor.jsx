@@ -106,11 +106,6 @@ const AddTutor = () => {
             required
             onChange={(e) => setCity(e.target.value)}
           />
-          <input
-            type="submit"
-            value="Submit"
-            className="button1 btn btn-secondary"
-          />
         </form>
       </div>
     </section>
