@@ -1,6 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './tutors.css';
